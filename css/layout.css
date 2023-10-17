@@ -1,0 +1,322 @@
+/*  ========================================================================  *\
+    
+    * OVERVIEW
+          
+    * This file manages the layout of the page.
+    * Instead of placing them separately, we link them to the components.
+
+    * This creates a connected but separate system.
+    * Which does nothing but say some parameters:
+    * For example: what size should they be and where should they appear.
+    
+    * The classes declared here can be called on any container.
+    * They wear the right size and behave the right way.
+    
+\*  ========================================================================  */
+
+/*  ========================================================================  *\
+    
+    * C O M M E N T
+    
+    * CONTAINER
+    *     .container;
+    *         @media(max-width: 1025px);
+    *         @media(max-width: 768px);
+    
+    * HEADER
+    *     .header;
+    *         .subscribe;
+    *         .site-logo;
+    *         @media(max-width: 1025px);
+    *         @media(max-width: 768px);
+    
+    * NAVIGATION
+    *     nav;
+    
+    * MAIN
+    *      main;
+    *         .content-box;
+    *         .content-box-one;
+    *         .content-box-two;
+    *             .business-box;
+    *             .culture-box;
+    *             .box-image;
+    *             @media(max-width: 1025px);
+    *             @media(max-width: 768px);
+    *         .content-box-one,
+    *         .content-box-three,
+    *         .content-box-four,
+    *         .content-box-five;
+    *             .post-image;
+    
+    * SECTION
+    *      section;
+    *         @media(max-width: 1025px);
+    *         @media(max-width: 768px);
+    *         .sidebar-box-one,
+    *         .sidebar-box-two,
+    *         .sidebar-nav;
+    *             .sidebar-box-head;
+    *             .sidebar-box-content;
+    *             .sidebar-box-foot; 
+    
+    * FOOTER
+    *      footer;
+
+\*  ========================================================================  */
+
+
+/*  ========================================================================  *\
+    C O N T A I N E R
+\*  ========================================================================  */
+
+.container {
+    display: grid;
+    grid-template-columns: 13vw 2fr 1fr 13vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        ". main section ."
+        "footer footer footer footer";
+    column-gap: clamp(20px, 2vw, 40px);  /*  Mobil: min.size=20px  -  Tablet: vievport size  -  FHD: max.size=40px  */
+}
+
+@media(max-width: 1025px) {
+    .container {
+        display: grid;
+        grid-template-columns: 5vw 1fr 5vw;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header header header"
+            "nav nav nav"
+            ". main ."
+            ". section ."
+            "footer footer footer";
+            column-gap: 0;
+        }
+}
+
+@media(max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 5vw 1fr 5vw;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header header header"
+            "nav nav nav"
+            ". main ."
+            ". section ."
+            "footer footer footer";
+            column-gap: 0;
+        }
+}
+
+
+/*  ========================================================================  *\
+    H E A D E R
+\*  ========================================================================  */
+
+header {
+  grid-area:        header;
+  display:          table;
+  width:            auto;
+  height:           80px;
+  background-color: #6200ea;
+}
+
+    .subscribe {
+        display:        table-cell;
+        width:          35vw;
+        height:         auto;
+        padding-left:   14.75vw;
+        vertical-align: middle;
+        text-align:     left;
+    }
+
+    .site-logo {
+        display:        table-cell;
+        width:          65vw;
+        height:         auto;
+        padding-right:  43vw;
+        vertical-align: middle;
+        text-align:     right;
+    }
+
+@media(max-width: 1025px) {
+    .subscribe {
+        padding-left: 5vw;
+    }
+    
+    .site-logo {
+        padding-right: 5vw;
+        padding-right: 5vw;
+    }
+}
+
+@media(max-width: 768px) {
+    .subscribe {
+        padding-left: 5vw;
+    }
+    
+    .site-logo {
+        padding-right: 5vw;
+    }
+}
+
+
+/*  ========================================================================  *\
+    N A V I G A T I O N
+\*  ========================================================================  */    
+
+nav {
+    grid-area:        nav;
+    margin-bottom:    clamp(30px, 2.6vw, 50px);  /*  Mobil: min.size=30px  -  Tablet: vievport size  -  FHD: max.size=50px  */
+    background-color: #ffffff;
+    text-align:       center;
+}
+
+
+/*  ========================================================================  *\
+    M A I N
+\*  ========================================================================  */
+
+main {
+  grid-area: main;
+}
+
+    .content-box {
+        margin-bottom:    clamp(20px, 2vw, 40px);  /*  Mobil: min.size=20px  -  Tablet: vievport size  -  FHD: max.size=40px  */
+        background-color: #ffffff;
+        border:           1px;
+        border-radius:    clamp(14px, 1vw, 20px);  /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+    }
+
+    .content-box-one {
+        background: url('../images/blog/content-box-one.jpg') no-repeat left top;
+        color:      #ffffff;
+    }
+
+    .content-box-two {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2vw;
+    }
+
+        .business-box {
+            grid-area: business-box;
+            padding:   clamp(16px, 1.25vw, 24px);  /*  Mobil: min.size=16px  -  Tablet: vievport size  -  FHD: max.size=24px  */
+        }
+        .culture-box {
+            grid-area: culture-box;
+            padding:   clamp(16px, 1.25vw, 24px);  /*  Mobil: min.size=16px  -  Tablet: vievport size  -  FHD: max.size=24px  */
+        }
+
+        .box-image {
+            float:         left;
+            width:         clamp(100px, 7.812vw, 120px);  /*  Mobil: min.size=100px  -  Tablet: vievport size  -  FHD: max.size=120px  */
+            height:        Clamp(100px, 7.812vw, 120px);  /*  Mobil: min.size=100px  -  Tablet: vievport size  -  FHD: max.size=120px  */
+            margin-right:  clamp(16px, 1.25vw, 24px);     /*  Mobil: min.size=16px -  Tablet: vievport size  -  FHD: max.size=24px  */
+            border-radius: clamp(14px, 1vw, 20px);        /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+        }
+
+    @media(max-width: 1025px) {
+        .content-box-two {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            column-gap: 2vw;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .content-box-two {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+            
+    .content-box-one,
+    .content-box-three,
+        .content-box-four,
+    .content-box-five {
+        padding: clamp(36px, 3.75vw, 72px);  /*  Mobil: min.size=36px  -  Tablet: vievport size  -  FHD: max.size=72px  */
+    }
+
+        .post-image {
+            width:                   100%;
+            height:                  clamp(300px, 20.833vw, 400px);  /*  Mobil: min.size=300px  -  Tablet: vievport size  -  FHD: max.size=400px  */
+            border:                  1px;
+            border-top-right-radius: clamp(14px, 1vw, 20px);         /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+            border-top-left-radius:  clamp(14px, 1vw, 20px);         /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+            background:              url('../images/blog/Sean.jpg') no-repeat center center;
+        }
+
+
+/*  ========================================================================  *\
+    S E C T I O N
+\*  ========================================================================  */
+
+section {
+    grid-area: section;
+}
+
+@media(max-width: 1025px) {
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        column-gap: 2vw;
+    }
+}
+
+@media(max-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+    .sidebar-box-one,
+    .sidebar-box-two,
+    .sidebar-nav {
+        width:            100%;
+        margin-bottom:    clamp(20px, 2vw, 40px);   /*  Mobil: min.size=20px  -  Tablet: vievport size  -  FHD: max.size=40px  */
+        background-color: #ffffff;
+        border:           1px;
+        border-radius:    clamp(14px, 1vw, 20px);  /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+    }
+
+        .sidebar-box-head {
+            padding:                 clamp(18px, 1.354vw, 26px);  /*  Mobil: min.size=18px -  Tablet: vievport size  -  FHD: max.size=26px  */
+            background-color:        #6200ea;
+            border:                  1px;
+            border-top-right-radius: clamp(14px, 1vw, 20px);      /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+            border-top-left-radius:  clamp(14px, 1vw, 20px);      /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=20px  */
+            text-align:              center;
+            color:                   #ffffff;
+        }
+
+        .sidebar-box-content {
+            padding: clamp(16px, 1.25vw, 24px);  /*  Mobil: min.size=16px -  Tablet: vievport size  -  FHD: max.size=24px  */
+        }
+
+        .sidebar-box-foot {
+            padding:      clamp(18px, 1.354vw, 26px);   /*  Mobil: min.size=18px  -  Tablet: vievport size  -  FHD: max.size=26px  */
+            border-top:   1px solid;
+            border-color: #f4f3f5;
+            text-align:   center;
+        }
+
+
+/*  ========================================================================  *\
+    F O O T E R
+\*  ========================================================================  */
+
+footer {
+    grid-area:        footer;
+    margin-top:       clamp(10px, 0.6vw, 14px);    /*  Mobil: min.size=10px  -  Tablet: vievport size  -  FHD: max.size=14px  */
+    background-color: #211138;
+    padding:          clamp(30px, 5.55vh, 60px);   /*  Mobil: min.size=30px  -  Tablet: vievport size  -  FHD: max.size=60px  */
+    text-align:       center;
+}

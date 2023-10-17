@@ -1,0 +1,189 @@
+/*  ========================================================================  *\
+    
+    * OVERVIEW
+  
+    * This file describes the components that make up the page.
+    * From their internal layout, the color of their text, etc.
+  
+    * It was visible until now, but here it is very strongly enforced by:
+    * BEM (Block - Element - Modifier) thinking in the code.
+
+\*  ========================================================================  */
+
+/*  ========================================================================  *\
+
+    * C O M M E N T
+    
+    * FONTS
+    *     h1, h2, h3, h4, .sidebar-box-foot-a;
+    *     p, p-box;
+    *     .list;
+    *     .footer-brandname, .footer-studentname;
+    
+    * REFERENCES
+    *     a, a:hover, a:visited;
+    
+    * LINKS
+    *     .link;
+    *     .link:hover;
+    *     .link:visited;
+    
+    * BUTTONS
+    *     .button-head;
+    *     .button-white;
+    *     .button-blue;
+    
+    * LIST, LI
+    *     .list
+    *         .li
+
+\*  ========================================================================  */
+
+/*  ========================================================================  *\
+    F O N T S
+\*  ========================================================================  */
+
+h1 {
+    text-transform: none;
+    font-size:      clamp(30px, 2.5vw, 48px);  /*  Mobil: min.size=30px  -  Tablet: vievport size  -  FHD: max.size=48px  */
+    font-weight:    bold;
+    line-height:    clamp(60px, 5vw, 96px);    /*  Mobil: min.size=60px  -  Tablet: vievport size  -  FHD: max.size=96px  */
+    letter-spacing: 1px;
+}
+
+h2, h3, h4, .sidebar-box-foot-a {
+    text-transform: uppercase; 
+    font-size:      clamp(12px, 0.781vw, 15px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+    font-weight:    bold;
+    line-height:    clamp(16px, 1.25vw, 24px);   /*  Mobil: min.size=16px  -  Tablet: vievport size  -  FHD: max.size=24px  */
+    letter-spacing: clamp(2px, 0.156vw, 3px);    /*  Mobil: min.size=2px  -  Tablet: vievport size  -  FHD: max.size=3px  */
+}
+
+h3, .sidebar-box-foot-a {
+    color: #b2acba;
+}
+
+h4 {
+    line-height: clamp(36px, 2.5vw, 45px);  /*  Mobil: min.size=36px  -  Tablet: vievport size  -  FHD: max.size=45px  */
+    color:       #6200ea;
+}
+
+p {
+    font-size:   clamp(14px, 1.3vw, 25px);      /*  Mobil: min.size=14px  -  Tablet: vievport size  -  FHD: max.size=25px  */
+    line-height: clamp(17.5px, 1.625vw, 32px);  /*  125%  */
+}
+
+.p-box {
+    font-size:   clamp(12px, 0.937vw, 18px);   /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=18px  */
+    line-height: clamp(15px, 1.125vw, 22px);   /*  125%  */
+}
+
+.footer-brandname,
+.footer-studentname {
+    color: #6200ea;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+
+/*  ========================================================================  *\
+    R E F E R E N C E S
+\*  ========================================================================  */ 
+
+a, a:hover, a:visited {
+    text-transform:  uppercase;
+    text-decoration: none;
+    cursor:          pointer;
+    font-weight:     bold;
+}
+
+a {
+    font-size:      clamp(12px, 0.781vw, 15px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+    letter-spacing: clamp(2px, 0.156vw, 3px);    /*  Mobil: min.size=2px  -  Tablet: vievport size  -  FHD: max.size=3px  */
+}
+
+    a:hover {
+        font-size: clamp(15px, 0.937vw, 18px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+        color:     orangered;
+    }
+
+    a:active {
+        font-size: clamp(15px, 0.937vw, 18px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+        color:     orangered;
+    }
+
+
+/*  ========================================================================  *\
+    L I N K S
+\*  ========================================================================  */
+
+.link {
+    display:       inline-block;
+    margin:        0vw 1.666vw 0vw 1.666vw;  /*  0px 32px 0px 32px  */
+    padding:       2.4vw 0vw 2vw 0vw;        /*  46px 0px 40px 0px  */
+    border-bottom: 0.37vh solid;
+    border-color:  #ffffff;
+    font-size:     clamp(12px, 0.781vw, 15px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+    color:         #000000;
+}
+
+    .link:hover {
+        border-bottom: 0.37vh solid;  /*  4px  */
+        border-color:  #6200ea;
+        color:         #6200ea;
+    }
+
+    link:active {
+        font-size: clamp(15px, 0.937vw, 18px);  /*  Mobil: min.size=12px  -  Tablet: vievport size  -  FHD: max.size=15px  */
+        color:     orangered;
+    }
+
+
+/*  ========================================================================  *\
+    B U T T O N S
+\*  ========================================================================  */
+
+.button-head,
+.button-white,
+.button-blue {
+    display:       inline-block;
+    width:         max(100px, 8.33vw);  /*  8.33vw=160px (FHD 1920x1080)  */
+    padding:       clamp(12px, 0.937vw, 18px);  /*  18px  */
+    border:        2px solid;
+    border-radius: max(25px, 1.3vw);  /*  25px  */
+    text-align:    center;
+}
+
+    .button-head {
+        background-color: #ffffff;
+        color:            #6200ea;
+    }
+    .button-white {
+        margin-top: max(20px, 1.85vh);  /*  20px  */
+        color:      #ffffff;
+    }
+
+    .button-blue {
+        margin-top: max(20px, 1.85vh);  /*  20px  */
+        color:      #6200ea;
+    }
+
+
+/*  ========================================================================  *\
+    L I S T ,  L I N K S
+\*  ========================================================================  */
+
+    .list {
+        color: #211138;
+    }
+
+        li {
+            padding-top:    clamp(16px, 1.25vw, 24px);  /*  Mobil: min.size=16px  -  Tablet: vievport size  -  FHD: max.size=24px  */
+            padding-right:  0;
+            padding-bottom: clamp(16px, 1.25vw, 24px);  /*  Mobil: min.size=16px  -  Tablet: vievport size  -  FHD: max.size=24px  */
+            padding-left:   clamp(25px, 2.08vw, 40px);  /*  Mobil: min.size=25px  -  Tablet: vievport size  -  FHD: max.size=40px  */
+            border-bottom:  1px solid;
+            border-color:   #f4f3f5;
+        }
